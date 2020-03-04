@@ -43,9 +43,13 @@ env.bak/
 venv.bak/ 
 
 # Visual Studio Code # 
+.vscode
 .vscode/* 
 !.vscode/settings.json 
 !.vscode/tasks.json 
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Npm Module
+node_modules

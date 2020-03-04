@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leads',
+    'frontend',
+    'leads'
+]
+
+# Pip App
+INSTALLED_APPS += [
     'rest_framework'
 ]
 
