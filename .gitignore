@@ -53,3 +53,6 @@ venv.bak/
 
 # Npm Module
 node_modules
+
+# WebPack Build Directory
+leadmanager/frontend/static/frontend/
