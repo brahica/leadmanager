@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD, GET_ERRORS } from './types'
 
-import { createMessage } from '../actions/message'
+import { createMessage, returnErrors } from '../actions/message'
 
 // GET LEADS
 export const getLeads = () => dispatch => {
@@ -10,10 +10,10 @@ export const getLeads = () => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_LEADS,
-                playload: res.data
+                payload: res.data
             })
         })
-        .catch(err => console.error(err))
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 
 // DELETE LEAD
@@ -25,10 +25,10 @@ export const deleteLead = (id) => dispatch => {
             }))
             dispatch({
                 type: DELETE_LEAD,
-                playload: id
+                payload: id
             })
         })
-        .catch(err => console.error(err))
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 
 // ADD LEAD
@@ -40,17 +40,8 @@ export const addLead = (lead) => dispatch => {
             }))
             dispatch({
                 type: ADD_LEAD,
-                playload: res.data
+                payload: res.data
             })
         })
-        .catch(err => {
-            const errors = {
-                msg: err.response.data,
-                status: err.response.status
-            }
-            dispatch({
-                type: GET_ERRORS,
-                playload: errors
-            })
-        })
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)))
 }
