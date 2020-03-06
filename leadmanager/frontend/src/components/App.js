@@ -25,6 +25,11 @@ import DashBoard from './leads/DashBoard'
 import Login from './accounts/Login'
 import Register from './accounts/Register'
 
+// Common Components
+import PrivateRoute from './common/PrivateRoute'
+
+import { loadUser } from '../actions/auth'
+
 // Alert Options
 const alertOptions = {
     timeout: 3000,
@@ -33,6 +38,10 @@ const alertOptions = {
 
 // Main App
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser())
+    }
+
     render() {
         return (
             <Provider store={store}>
@@ -43,7 +52,7 @@ class App extends Component {
                             <Alerts />
                             <div className="container">
                                 <Switch>
-                                    <Route exact path="/" component={DashBoard} />
+                                    <PrivateRoute exact path="/" component={DashBoard} />
                                     <Route exact path="/register/" component={Register} />
                                     <Route exact path="/login/" component={Login} />
                                 </Switch>
