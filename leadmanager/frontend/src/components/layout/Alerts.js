@@ -15,20 +15,31 @@ export class Alerts extends Component {
 
         // Catch Errors Message from REST API
         if (error !== prevPros.error) {
+            // LOGIN & REGISTER ERRORS
             if (error.msg.name)
                 alert.error(`Name: ${error.msg.name.join()}`);
+            if (error.msg.username)
+                alert.error(`Username: ${error.msg.username.join()}`);
+            if (error.msg.password)
+                alert.error(`Password: ${error.msg.password.join()}`);
             if (error.msg.email)
                 alert.error(`Email: ${error.msg.email.join()}`);
             if (error.msg.message)
                 alert.error(`Message: ${error.msg.message.join()}`);
+
+            // LOGOUT ERRORS
+            if (error.msg.non_field_errors)
+                alert.error(`${error.msg.non_field_errors.join()}`);
         }
 
-        // Catch Success Messages 
+        // Catch Messages 
         if (message !== prevPros.message) {
             if (message.deleteLead)
                 alert.success(message.deleteLead)
             if (message.addLead)
                 alert.success(message.addLead)
+            if (message.passwordsNotMatch)
+                alert.error(message.passwordsNotMatch)
         }
     }
 
