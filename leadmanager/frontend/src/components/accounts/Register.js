@@ -7,7 +7,7 @@ import { createMessage } from '../../actions/message'
 
 export class Register extends Component {
     state = {
-        username: '',
+        // username: '',
         email: '',
         password: '',
         password2: ''
@@ -26,7 +26,7 @@ export class Register extends Component {
             this.props.createMessage({ passwordsNotMatch: 'Passwords do not match' })
         } else {
             const newUser = {
-                username,
+                // username,
                 password,
                 email
             }
@@ -50,7 +50,7 @@ export class Register extends Component {
                 <div className="card card-body mt-5">
                     <h2 className="text-center">Register</h2>
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label>Username</label>
                             <input
                                 type="text"
@@ -59,7 +59,7 @@ export class Register extends Component {
                                 onChange={this.onChange}
                                 value={username}
                             />
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label>Email</label>
                             <input

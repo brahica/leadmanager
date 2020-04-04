@@ -133,3 +133,6 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication', )
 }
+
+# Custome User Model
+AUTH_USER_MODEL = 'accounts.User'

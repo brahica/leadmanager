@@ -6,7 +6,7 @@ import { login } from '../../actions/auth'
 
 export class Login extends Component {
     state = {
-        username: '',
+        email: '',
         password: '',
     }
 
@@ -17,7 +17,7 @@ export class Login extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.login(this.state.username, this.state.password)
+        this.props.login(this.state.email, this.state.password)
     }
 
     onChange = e => {
@@ -29,7 +29,7 @@ export class Login extends Component {
             return <Redirect to="/" />;
         }
 
-        const { username, password } = this.state;
+        const { email, password } = this.state;
 
         return (
             <div className="col-md-6 m-auto">
@@ -37,13 +37,13 @@ export class Login extends Component {
                     <h2 className="text-center">Login</h2>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label>Username</label>
+                            <label>Email</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                name="username"
+                                name="email"
                                 onChange={this.onChange}
-                                value={username}
+                                value={email}
                             />
                         </div>
                         <div className="form-group">
