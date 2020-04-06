@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'frontend',
     'leads',
-    'accounts'
+    'accounts',
+    'map'
 ]
 
 # Pip App

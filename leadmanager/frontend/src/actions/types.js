@@ -27,3 +27,9 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 
+
+// MAP ACTIONS TYPE
+export const GET_MAPS = 'GET_MAPS';
+export const ADD_MAP = 'ADD_MAP';
+export const DELETE_MAP = 'DELETE_MAP';
+

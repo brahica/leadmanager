@@ -21,6 +21,8 @@ import Alerts from './layout/Alerts'
 // Leads Components
 import DashBoard from './leads/DashBoard'
 
+import DashBoardMap from './maps/DashBoard'
+
 // Accounter Components
 import Login from './accounts/Login'
 import Register from './accounts/Register'
@@ -52,7 +54,7 @@ class App extends Component {
                             <Alerts />
                             <div className="container">
                                 <Switch>
-                                    <PrivateRoute exact path="/" Comp={DashBoard} />
+                                    <PrivateRoute exact path="/" Comp={DashBoardMap} />
                                     <Route exact path="/register/" component={Register} />
                                     <Route exact path="/login/" component={Login} />
                                 </Switch>
